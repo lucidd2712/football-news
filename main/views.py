@@ -41,11 +41,6 @@ def show_xml(request):
     xml_data = serializers.serialize("xml", news_list)
     return HttpResponse(xml_data, content_type="application/xml")
 
-# tambahan dari gpt biar ga eror
-def show_news_list(request):
-    news_list = News.objects.all()
-    return render(request, "news_list.html", {"news_list": news_list})
-
 
 def show_json(request):
     news_list = News.objects.all()
